@@ -12,6 +12,9 @@ env.aws_region = AWS_REGION
 
 pipeline {
     agent any
+   environment {
+    PATH = "${PATH}:${getTerraformPath()}"
+  }
     stages {
          stage ('Terraform Init'){
             steps {
